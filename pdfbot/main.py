@@ -8,6 +8,7 @@ from fastapi import UploadFile, File
 import shutil
 import os
 from fastapi.responses import StreamingResponse
+import uvicorn
 
 
 logger = setup_logger()
@@ -111,3 +112,11 @@ def delete_document_api(document_id: str = Path(..., min_length=1)):
     except Exception:
         logger.exception("Failed to delete document.")
         raise HTTPException(status_code=500, detail="Internal Server Error")
+    
+# At the very bottom of main.py
+
+
+if __name__ == "__main__":
+    # Render provides the port via the environment variable $PORT
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
