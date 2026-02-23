@@ -118,7 +118,6 @@ http://127.0.0.1:8000
 |----------|------------|
 | API_KEY | Groq API Key |
 | MODEL_NAME | LLM Model Name |
-| LOG_LEVEL (optional) | Logging level |
 
 ---
 
