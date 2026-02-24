@@ -23,6 +23,12 @@ This project demonstrates real-world backend architecture for AI-powered documen
 
 <img width="1918" height="1030" alt="Screenshot 2026-02-23 162627" src="https://github.com/user-attachments/assets/11210c69-b91c-41ec-b4e6-534157df54c6" />
 
+<img width="1919" height="1019" alt="Screenshot 2026-02-23 162718" src="https://github.com/user-attachments/assets/03bc9cba-7d89-45eb-911e-4170f9a3b52e" />
+
+<img width="1919" height="1025" alt="Screenshot 2026-02-23 162747" src="https://github.com/user-attachments/assets/8bd9cd8f-c754-4f2b-9622-0952e6c16d24" />
+
+
+
 
 ## 🏗 Architecture Flow
 
