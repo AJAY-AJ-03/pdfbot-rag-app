@@ -1,4 +1,4 @@
-# 📚 Resume RAG Chatbot  
+# 📚 RAG Chatbot  
 Production-Ready Retrieval-Augmented Generation (RAG) Application using FastAPI, ChromaDB, and Groq LLM
 
 ---
