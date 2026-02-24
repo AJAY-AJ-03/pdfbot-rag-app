@@ -1,4 +1,4 @@
-# 📚 RAG Chatbot – Production-Ready AI Document Q&A System
+# 📚 RAG Chatbot – Multi-Document AI Document Q&A System
 
 Production-grade Retrieval-Augmented Generation (RAG) application built using FastAPI, ChromaDB, Groq LLM, and React.
 
