@@ -19,6 +19,11 @@ This project demonstrates real-world backend architecture for AI-powered documen
 
 ---
 
+## 📸 Screenshots
+
+<img width="1918" height="1030" alt="Screenshot 2026-02-23 162627" src="https://github.com/user-attachments/assets/11210c69-b91c-41ec-b4e6-534157df54c6" />
+
+
 ## 🏗 Architecture Flow
 
 PDF → Text Extraction → Token Chunking → Embeddings → ChromaDB  
