@@ -27,7 +27,21 @@ This project demonstrates real-world backend architecture for AI-powered documen
 
 <img width="1919" height="1025" alt="Screenshot 2026-02-23 162747" src="https://github.com/user-attachments/assets/8bd9cd8f-c754-4f2b-9622-0952e6c16d24" />
 
+<img width="1918" height="1024" alt="Screenshot 2026-02-23 162832" src="https://github.com/user-attachments/assets/d7e60063-9968-4264-9276-1ce6578cdc1d" />
 
+<img width="1918" height="1026" alt="Screenshot 2026-02-23 162923" src="https://github.com/user-attachments/assets/9b0ad219-30c4-4452-8233-eb273f8d891e" />
+
+<img width="1919" height="1031" alt="Screenshot 2026-02-23 163045" src="https://github.com/user-attachments/assets/ee8266a9-7c43-4b82-b52a-bf9fd2fe66e6" />
+
+<img width="1919" height="1028" alt="Screenshot 2026-02-23 163121" src="https://github.com/user-attachments/assets/b3084526-c3ae-43cc-868c-fbcaafd87672" />
+
+<img width="1917" height="1028" alt="Screenshot 2026-02-23 163139" src="https://github.com/user-attachments/assets/1c2c1f6c-faf8-44b3-98f5-ed5f6cc851c6" />
+
+<img width="1919" height="1031" alt="Screenshot 2026-02-23 163312" src="https://github.com/user-attachments/assets/ce58ae89-8717-4900-9692-d34648275633" />
+
+<img width="1919" height="1029" alt="Screenshot 2026-02-23 163626" src="https://github.com/user-attachments/assets/5f8a5013-ddc4-4037-aea1-37918cf0b667" />
+
+<img width="1919" height="1027" alt="Screenshot 2026-02-23 163749" src="https://github.com/user-attachments/assets/ec2369d4-2530-4fc6-bdb7-909ea92ea4c0" />
 
 
 ## 🏗 Architecture Flow
