@@ -1,25 +1,27 @@
-# 📚 RAG Chatbot  
-Production-Ready Retrieval-Augmented Generation (RAG) Application using FastAPI, ChromaDB, and Groq LLM
+# 📚 RAG Chatbot – Production-Ready AI Document Q&A System
+
+Production-grade Retrieval-Augmented Generation (RAG) application built using FastAPI, ChromaDB, Groq LLM, and React.
 
 ---
 
 ## 🚀 Project Overview
 
-This project is a production-style Retrieval-Augmented Generation (RAG) system that allows users to upload a PDF (e.g., resume or document) and ask questions about its content.
+This is a production-style Retrieval-Augmented Generation (RAG) system that allows users to upload a PDF (resume, documentation, etc.) and ask contextual questions about its content.
 
 The system:
+
 - Extracts text from PDF
 - Performs token-aware chunking
 - Generates embeddings
 - Stores vectors in ChromaDB
-- Retrieves relevant context
-- Streams answers using Groq LLM
+- Retrieves semantically relevant context
+- Streams responses using Groq LLM
+- Displays responses in a real-time React UI
 
-This project demonstrates real-world backend architecture for AI-powered document Q&A systems.
+This project demonstrates real-world AI backend architecture with proper frontend–backend integration.
 
 ---
 
-## 📸 Screenshots
 
 <img width="1918" height="1030" alt="Screenshot 2026-02-23 162627" src="https://github.com/user-attachments/assets/11210c69-b91c-41ec-b4e6-534157df54c6" />
 
@@ -43,148 +45,212 @@ This project demonstrates real-world backend architecture for AI-powered documen
 
 <img width="1919" height="1027" alt="Screenshot 2026-02-23 163749" src="https://github.com/user-attachments/assets/ec2369d4-2530-4fc6-bdb7-909ea92ea4c0" />
 
-
 ## 🏗 Architecture Flow
 
-PDF → Text Extraction → Token Chunking → Embeddings → ChromaDB  
-→ Similarity Search → Context Building → Groq LLM → Streaming Response
+PDF  
+→ Text Extraction  
+→ Token Chunking  
+→ Embeddings  
+→ ChromaDB  
+→ Similarity Search  
+→ Context Construction  
+→ Groq LLM  
+→ Streaming Response  
+→ React UI  
 
 ---
 
 ## 🛠 Tech Stack
 
-### Backend
+### 🔹 Backend (`pdfbot/`)
 - FastAPI
-- ChromaDB (Vector Database)
+- ChromaDB (Persistent Vector Database)
 - Sentence Transformers (`all-MiniLM-L6-v2`)
 - Groq LLM API
 - Tiktoken (Token-aware chunking)
 - PyPDF
 - Python Logging
+- Environment-based configuration
 
-### Frontend
+### 🔹 Frontend (`pdf-chat-ui/`)
 - React
 - Axios
 - Markdown Rendering
-
----
-
-## ✨ Key Features
-
-- Token-aware chunking using tiktoken
-- Persistent vector storage with ChromaDB
-- Streaming LLM responses
-- Context size control
-- Structured logging (console + file)
-- Clean layered backend architecture
-- Environment-based configuration
+- Streaming response handling
+- Vite
 
 ---
 
 ## 📂 Project Structure
 
-
+```
 project-root/
 │
-├── backend/
-│ ├── main.py
-│ ├── services.py
-│ ├── schemas.py
-│ ├── config.py
-│ ├── logger_config.py
-│ ├── utils.py
-│ └── requirements.txt
+├── pdfbot/                 # Backend (FastAPI)
+│   ├── main.py
+│   ├── services.py
+│   ├── schemas.py
+│   ├── config.py
+│   ├── logger_config.py
+│   ├── utils.py
+│   └── requirements.txt
 │
-├── frontend/
+├── pdf-chat-ui/            # Frontend (React)
+│   ├── src/
+│   ├── .env
+│   └── package.json
 │
 └── README.md
-
+```
 
 ---
 
-## ⚙️ Setup Instructions
+# ⚙️ Backend Setup (FastAPI – `pdfbot`)
 
 ### 1️⃣ Clone Repository
 
-
+```bash
 git clone <your-repo-url>
-cd project-root/backend
-
+cd project-root/pdfbot
+```
 
 ### 2️⃣ Install Dependencies
 
-
+```bash
 pip install -r requirements.txt
+```
 
+### 3️⃣ Create `.env` File (Inside `pdfbot`)
 
-### 3️⃣ Create `.env` File
-
-
+```
 API_KEY=your_groq_api_key
 MODEL_NAME=llama-3.3-70b-versatile
-
+```
 
 ### 4️⃣ Run Backend
 
-
+```bash
 uvicorn main:app --reload
-
+```
 
 Backend runs at:
 
+```
 http://127.0.0.1:8000
-
+```
 
 ---
 
-## 🔐 Environment Variables
+# 💻 Frontend Setup (React – `pdf-chat-ui`)
+
+### 1️⃣ Navigate to Frontend Directory
+
+```bash
+cd ../pdf-chat-ui
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Create `.env` File (Inside `pdf-chat-ui`)
+
+```
+VITE_API_BASE_URL=http://127.0.0.1:8000
+```
+
+This environment variable is used to connect the frontend to the FastAPI backend.
+
+### 4️⃣ Run Frontend
+
+```bash
+npm run dev
+```
+
+Frontend typically runs at:
+
+```
+http://localhost:5173
+```
+
+---
+
+# ✨ Key Features
+
+- Token-aware chunking using `cl100k_base`
+- Overlapping chunk strategy for semantic continuity
+- Persistent vector storage with ChromaDB
+- Top-K similarity retrieval
+- Context size control to prevent token overflow
+- Streaming LLM responses
+- Structured logging (console + file)
+- Clean layered backend architecture
+- Environment-based configuration
+- Interactive React UI with real-time streaming output
+
+---
+
+# 📊 Retrieval Pipeline Details
+
+1. PDF text extracted using PyPDF  
+2. Tokenized using `tiktoken`  
+3. Split into overlapping chunks  
+4. Embedded using Sentence Transformers  
+5. Stored in persistent ChromaDB  
+6. Top-K similar chunks retrieved per query  
+7. Context constrained by MAX_CONTEXT_CHARS  
+8. Response streamed from Groq LLM  
+9. Rendered live in frontend UI  
+
+---
+
+# 🔐 Environment Variables
+
+### Backend (`pdfbot/.env`)
 
 | Variable | Description |
 |----------|------------|
 | API_KEY | Groq API Key |
-| MODEL_NAME | LLM Model Name |
+| MODEL_NAME | LLM model name |
+
+### Frontend (`pdf-chat-ui/.env`)
+
+| Variable | Description |
+|----------|------------|
+| VITE_API_BASE_URL | Backend API Base URL |
 
 ---
 
-## 📊 How Retrieval Works
-
-- Document is tokenized using `cl100k_base` encoding
-- Text is split into overlapping chunks
-- Each chunk is embedded using Sentence Transformers
-- Vectors stored in ChromaDB (persistent storage)
-- Top-K relevant chunks retrieved per query
-- Context limited by MAX_CONTEXT_CHARS
-- Response streamed from Groq LLM
-
----
-
-## 🧠 Why This Project Matters
+# 🧠 Why This Project Matters
 
 This project demonstrates:
 
 - Real-world RAG architecture
-- Token-aware context management
-- Efficient vector search
+- Token-aware context engineering
+- Efficient semantic vector search
 - LLM streaming implementation
-- Clean backend design for AI applications
+- Production-style backend structuring
+- Full stack AI application development
 
-It reflects production-ready AI system development practices.
+It reflects practical AI system engineering beyond basic chatbot demos.
 
 ---
 
-## 📌 Future Improvements
+# 📌 Future Improvements
 
-- Docker deployment
-- Authentication layer
+- Dockerized deployment
+- Authentication & RBAC
 - Rate limiting
+- Multi-document session management
 - Cloud deployment
-- Multi-document support
+- Monitoring & analytics
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-Ajay Rathnam  
-Backend Developer | AI Application Developer
-
----
+**Ajay Rathnam**  
+Python Full Stack Developer | AI Application Developer  
+React • FastAPI • Django • RAG Systems • Vector Search • LLM Integration
